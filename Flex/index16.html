@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .parent {
+        border: 5px solid red;
+        display: flex;
+        /* justify-content: space-around; */
+        /* height: 100vh; */
+        /* flex-direction: column; */
+        /* justify-content: center; */
+        /* align-items: center; */
+      }
+      .child {
+        border: 3px solid blue;
+        width: 100px;
+        height: 100px;
+        /* margin: auto; */
+      }
+      .child1 {
+        /* 만약 요소가 하나만 있는 상태에서 margin:auto;를 주면 화면의 정 가운데로 요소가 감 */
+        /* justify-content나 align-items속성없이 정 가운데로 보냄 */
+        /* margin: auto; */
+        margin-right: auto;
+      }
+      .child2 {
+        /* margin-left: auto; */
+      }
+      .child3 {
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child child1">1</div>
+      <div class="child child2">2</div>
+      <div class="child child3">3</div>
+    </div>
+  </body>
+</html>
