@@ -5,28 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      .parent {
-        border: 5px solid red;
-        height: 1000px;
-        display: flex;
-        /* 자식에게 높이값을 주지 않으면 자동으로 부모의 높이만큼 가득참. */
-        /* 그런데 만약 align-items속성이 있으면 자식은 인라인 블럭처럼 되버림 */
-        /* align-items: stretch; */
-        align-items: center;
-        /* justify-content: center; */
+      body {
+        /* border: 5px solid red; */
+        margin: 0;
+        padding: 0;
+        height: 100vh;
       }
-      .child {
-        border: 3px solid blue;
+      h2 {
+        margin: 0;
+      }
+      .container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      header {
+        background-color: salmon;
+        height: 100px;
+      }
+      aside {
+        background-color: seagreen;
+        height: 100px;
+      }
+      section {
+        display: flex;
+        /* height: 100vh; */
+        height: 100%;
+      }
+      section nav {
+        /* border: 5px solid red; */
+        /* flex: 1; */
+        background-color: slateblue;
+        /* height: 100%; */
         width: 200px;
-        /* height: 100px; */
+        /* flex-basis: 200px; */
+      }
+      section main {
+        /* border: 5px solid red; */
+        flex: 4;
+        background-color: goldenrod;
+      }
+      @media (max-width: 768px) {
+        section {
+          flex-direction: column;
+        }
+        section nav {
+          width: 100%;
+        }
       }
     </style>
   </head>
   <body>
-    <div class="parent">
-      <div class="child">child1</div>
-      <div class="child">child2</div>
-      <div class="child">child3</div>
+    <div class="container">
+      <header>
+        <h2>Header</h2>
+      </header>
+      <aside>
+        <h2>Banner</h2>
+      </aside>
+      <section>
+        <nav>
+          <h2>Nav</h2>
+        </nav>
+        <main>
+          <h2>Main</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat
+            vitae est praesentium asperiores vero ipsam inventore. Unde debitis
+            odit mollitia? Cumque distinctio minima sint obcaecati facere
+            consequatur repudiandae quaerat quae ipsa nostrum dolore recusandae
+            culpa est placeat quas ad debitis voluptatem rerum, consequuntur
+            omnis! Natus, non libero sunt veniam odit vel voluptas assumenda
+            nisi nemo, atque blanditiis a voluptates expedita fuga aliquam
+            nobis. Distinctio est deserunt facilis, ducimus iusto nesciunt
+            excepturi repudiandae cum eveniet at veniam nisi, deleniti labore
+            voluptas qui ut pariatur. Minus dolor iusto ipsum aut, commodi
+            temporibus beatae quidem, minima libero modi odit magnam nulla
+            assumenda accusantium.
+          </p>
+        </main>
+      </section>
     </div>
   </body>
 </html>
