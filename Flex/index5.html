@@ -6,71 +6,52 @@
     <title>Document</title>
     <style>
       body {
-        margin: 0;
-        padding: 0;
-        background-color: #ddd;
-      }
-      header {
-        /* border: 5px solid red; */
-        background-color: #fff;
         display: flex;
-        justify-content: space-between;
-        /* height: 50px; */
-        padding: 20px 0;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .grand-parent {
+        border: 5px solid red;
+        width: 1000px;
+        height: 600px;
+        display: flex;
+        justify-content: center;
         align-items: center;
       }
-      .logo {
-        /* border: 5px solid blue; */
-        margin-left: 20px;
+      .grand {
+        border: 5px solid blue;
+        width: 800px;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
-      .menu {
-        /* border: 5px solid green; */
+      .parent {
+        border: 5px solid green;
+        width: 600px;
+        height: 300px;
+        /* display: inline-flex; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
-      .menu a {
-        /* border: 5px solid green; */
-        text-decoration: none;
-        color: black;
-        margin: 10px;
-      }
-      .search {
-        /* border: 5px solid greenyellow; */
-        margin-right: 20px;
-      }
-      .search input {
-      }
-      .search input::placeholder {
-        font-style: italic;
-      }
-      @media (max-width: 768px) {
-        header {
-          flex-direction: column;
-        }
-        .logo {
-          margin-left: 0;
-          margin-bottom: 20px;
-        }
-        .search {
-          margin-right: 0;
-          margin-top: 20px;
-        }
+      .child {
+        border: 5px solid orange;
+        width: 100px;
+        height: 100px;
       }
     </style>
   </head>
   <body>
-    <header>
-      <div class="logo">
-        <img src="images/logo.png" alt="" />
+    <div class="grand-parent">
+      <div class="grand">
+        <div class="parent">
+          <div class="child">child1</div>
+          <div class="child">child2</div>
+          <div class="child">child3</div>
+        </div>
       </div>
-      <div class="menu">
-        <a href="#none">Home</a>
-        <a href="#none">About</a>
-        <a href="#none">Service</a>
-        <a href="#none">Blog</a>
-        <a href="#none">Contact</a>
-      </div>
-      <div class="search">
-        <input type="search" placeholder="Search" />
-      </div>
-    </header>
+    </div>
   </body>
 </html>

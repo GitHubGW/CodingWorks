@@ -3,62 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>레이아웃 설계2</title>
+    <title>Document</title>
     <style>
-      body {
-        margin: 0;
-        padding: 0;
-        /* height: 100vh; */
-      }
-      .container {
-        /* border: 5px solid #000; */
-        height: 100vh;
+      .parent {
+        border: 5px solid red;
         display: flex;
+        /* flex-direction: row; */
+        /* flex-wrap: wrap; */
+        /* flex-flow: wrap row; */
+        flex-flow: row wrap;
       }
-      nav {
-        width: 200px;
-        background-color: khaki;
-      }
-      main {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-      }
-      main header {
-        background-color: darksalmon;
-        height: 100px;
-      }
-      main section {
-        display: flex;
-        /* height를 calc로 계산해서 줘도 되고 아니면 이 태그의 부모에 display: flex;를 준 후 height:100%를 주면 부모 크기 안에서 꽉차게 된다 */
-        /* height: calc(100% - 200px); */
-        height: 100%;
-      }
-      section article {
-        flex: 4;
-        background-color: lightgreen;
-      }
-      section aside {
-        flex: 1;
-        background-color: lightpink;
-      }
-      main footer {
-        background-color: indianred;
+      .child {
+        border: 5px solid orange;
+        width: 100px;
         height: 100px;
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <nav>Nav</nav>
-      <main>
-        <header>Header</header>
-        <section>
-          <article>Article</article>
-          <aside>Aside</aside>
-        </section>
-        <footer>Footer</footer>
-      </main>
+    <div class="parent">
+      <div class="child">1</div>
+      <div class="child">2</div>
+      <div class="child">3</div>
+      <div class="child">4</div>
+      <div class="child">5</div>
+      <div class="child">6</div>
     </div>
   </body>
 </html>

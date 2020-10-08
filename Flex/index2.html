@@ -5,98 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      /* flex방식 */
       body {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        font-size: 25px;
-      }
-      .container {
-        border: 5px solid red;
-        width: 1500px;
         text-align: center;
       }
-      header {
-        /* border: 5px solid blue; */
-        background-color: teal;
-        padding: 20px;
+      .parent {
+        border: 5px solid red;
+        /* display: flex; */
+        /* 부모요소의 크기가 자식요소의 크기만큼 줄어들음 */
+        /* 그리고 부모요소는 inline-block형태로 되어버림 */
+        /* 그래서 만약 가운데 정렬하려면 이 부모에게 text-align: center;를 줘야함 */
+        display: inline-flex;
       }
-      section {
-        /* border: 5px solid green; */
-        height: 800px;
-        display: flex;
-        /* line-height를 높이값만큼 줘서 텍스트를 가운데 정렬시킬 수도 있지만
-        flex를 이용해도 가능함 */
-        /* line-height: 800px; */
+      .child {
+        border: 3px solid blue;
+        margin: 5px;
+        width: 200px;
+        height: 200px;
       }
-      section .aside1 {
-        background-color: yellow;
-        flex: 1;
-        /* 텍스트 입장에선 이 태그가 부모요소기 때문에 본인 자신에게 flex를 주고
-        중앙 정렬시키면 텍스트도 정 가운데로 정렬됨 */
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      /* 기존 방식 */
+      /* body {
+        text-align: center;
       }
-      section .aside2 {
-        background-color: yellowgreen;
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      .parent {
+        border: 5px solid red;
+        display: inline-block;
+        overflow: hidden;
       }
-      section main {
-        background-color: tomato;
-        flex: 4;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      footer {
-        /* border: 5px solid orange; */
-        background-color: violet;
-        padding: 20px;
-      }
-      @media (max-width: 768px) {
-        body {
-          /* 중요! pc에서 body에 height:100vh를 준 걸 모바일에선 auto또는 100%로 변경해줘야 컨텐츠들이 안 짤리고 다 보임 */
-          height: auto;
-        }
-        .container {
-          width: 100%;
-        }
-        section {
-          flex-direction: column;
-        }
-        section main {
-          order: 1;
-        }
-        section .aside1 {
-          order: 2;
-        }
-        section .aside2 {
-          order: 3;
-        }
-      }
+      .child {
+        border: 3px solid blue;
+        margin: 5px;
+        width: 200px;
+        height: 200px;
+        float: left;
+      } */
     </style>
   </head>
   <body>
-    <div class="container">
-      <header>Header</header>
-      <section>
-        <aside class="aside1">Aside1</aside>
-        <main>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-          architecto praesentium dicta modi consectetur, perferendis aut quod.
-          Provident, fuga dicta id veniam magnam velit fugiat repellat non
-          facilis nemo illo.
-        </main>
-        <aside class="aside2">Aside2</aside>
-      </section>
-      <footer>Footer</footer>
+    <div class="parent">
+      <div class="child">child1</div>
+      <div class="child">child2</div>
+      <div class="child">child3</div>
     </div>
   </body>
 </html>

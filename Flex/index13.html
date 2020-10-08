@@ -6,37 +6,29 @@
     <title>Document</title>
     <style>
       .parent {
-        /* border: 5px solid red; */
+        border: 5px solid red;
         display: flex;
-        /* flex-wrap: wrap; */
+        width: 800px;
       }
       .child {
-        background-color: lightgreen;
+        border: 5px solid blue;
+        /* width: calc(800px / 3); */
+        /* width: 33.33333%; */
+        /* width: 200px; */
         height: 200px;
-        margin: 10px;
-        text-align: center;
-        line-height: 200px;
-        font-size: 50px;
-        border-radius: 5px;
-        color: white;
-        /* flex:1;을 주면 flex-basis값이 0이 되버려서 width를 줬을 때 wrap이 동작하지 않게 되버림( 왜냐면 너비가 0px일 때 wrap을 하기 때문에 동작X ) */
-        /* 그렇기 때문에 flex:1;과 flex-basis값을 주거나 flex-grow:1;과 width 또는 flex-basis를 줘야함 */
+      }
+      .child:nth-child(1) {
+        /* flex: 1; */
+        flex-basis: 200px;
+      }
+      .child:nth-child(2) {
         flex: 1;
-        flex-basis: 300px;
-        /* flex-grow: 1; */
-        /* width: 600px; */
       }
-      /* 테블릿, 모바일 버전 */
-      /* 테블릿과 모바일 버전일 때 flex-wrap:wrap;을 줘서 더 정밀하게 설정할 수 있음 */
-      @media (min-width: 768px) and (max-width: 1024px) {
-        .parent {
-          flex-wrap: wrap;
-        }
+      .child:nth-child(3) {
+        flex: 1;
       }
-      @media (max-width: 768px) {
-        .parent {
-          flex-wrap: wrap;
-        }
+      .child:nth-child(4) {
+        flex: 2;
       }
     </style>
   </head>
@@ -45,6 +37,7 @@
       <div class="child">1</div>
       <div class="child">2</div>
       <div class="child">3</div>
+      <div class="child">4</div>
     </div>
   </body>
 </html>

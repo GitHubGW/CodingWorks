@@ -3,64 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>레이아웃 설계1</title>
+    <title>Document</title>
     <style>
-      body {
-        margin: 0;
-        padding: 0;
-        /* height: 100vh; */
-      }
-      .container {
-        /* border: 5px solid red; */
-        /* height: 100%; */
-        height: 100vh;
+      .parent {
+        border: 5px solid red;
         display: flex;
-        flex-direction: column;
+        height: 600px;
+        flex-wrap: wrap-reverse;
       }
-      header {
-        background-color: steelblue;
-        height: 200px;
-      }
-      section {
-        /* border: 5px solid blue; */
-        /* height: calc(100vh - 400px); */
-        /* 부모의 display:flex가 있으면 자식에게 높이 100%를 주면 부모의 높이를
-        넘어가지 않는 선에서 최대로 커짐 */
-        height: 100%;
-        display: flex;
-      }
-      section article {
-        flex: 3;
-        background-color: yellowgreen;
-      }
-      section aside {
-        flex: 1;
-        background-color: coral;
-      }
-      section nav {
-        flex: 1;
-        background-color: darkorchid;
-      }
-      footer {
-        background-color: burlywood;
-        height: 200px;
-      }
-      @media (max-width: 768px) {
-        section {
-          flex-direction: column;
-        }
+      .child {
+        border: 3px solid blue;
+        width: 100px;
+        height: 100px;
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <header>Header</header>
-      <section>
-        <article>Article</article>
-        <aside>Aside</aside>
-        <nav>Nav</nav>
-      </section>
-      <footer>Footer</footer>
+    <div class="parent">
+      <div class="child">1</div>
+      <div class="child">2</div>
+      <div class="child">3</div>
+      <div class="child">4</div>
+      <div class="child">5</div>
+      <div class="child">6</div>
+      <div class="child">7</div>
+      <div class="child">8</div>
+      <div class="child">9</div>
     </div>
   </body>
 </html>
