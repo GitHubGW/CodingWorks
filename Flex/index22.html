@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #ddd;
+      }
+      header {
+        /* border: 5px solid red; */
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+        /* height: 50px; */
+        padding: 20px 0;
+        align-items: center;
+      }
+      .logo {
+        /* border: 5px solid blue; */
+        margin-left: 20px;
+      }
+      .menu {
+        /* border: 5px solid green; */
+      }
+      .menu a {
+        /* border: 5px solid green; */
+        text-decoration: none;
+        color: black;
+        margin: 10px;
+      }
+      .search {
+        /* border: 5px solid greenyellow; */
+        margin-right: 20px;
+      }
+      .search input {
+      }
+      .search input::placeholder {
+        font-style: italic;
+      }
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+        }
+        .logo {
+          margin-left: 0;
+          margin-bottom: 20px;
+        }
+        .search {
+          margin-right: 0;
+          margin-top: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="images/logo.png" alt="" />
+      </div>
+      <div class="menu">
+        <a href="#none">Home</a>
+        <a href="#none">About</a>
+        <a href="#none">Service</a>
+        <a href="#none">Blog</a>
+        <a href="#none">Contact</a>
+      </div>
+      <div class="search">
+        <input type="search" placeholder="Search" />
+      </div>
+    </header>
+  </body>
+</html>

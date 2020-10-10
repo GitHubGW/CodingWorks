@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>카드 UI 수직 정렬 맞추기</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .card-items {
+        /* border: 5px solid #000; */
+        display: flex;
+        /* width: 100%; */
+        width: 1100px;
+        justify-content: space-between;
+      }
+      .card {
+        border: 1px solid #ddd;
+        /* margin: 20px; */
+        width: 300px;
+        height: 400px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .card h3 {
+        /* border: 3px solid red; */
+        /* flex: 1; */
+      }
+      .card p {
+        /* border: 3px solid blue; */
+        /* flex: 1; */
+      }
+      .card img {
+        /* border: 3px solid green; */
+        /* flex: 1; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card-items">
+      <div class="card">
+        <h3>Card #01</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, fuga.
+        </p>
+        <img src="http://placehold.it/300x150" alt="" />
+      </div>
+      <div class="card">
+        <h3>Card #02</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, quas
+          porro. Eius culpa ullam hic neque. Dolore accusantium non nostrum?
+        </p>
+        <img src="http://placehold.it/300x150" alt="" />
+      </div>
+      <div class="card">
+        <h3>Card #03</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
+          repellendus, odit earum cumque pariatur nihil quas veritatis beatae
+          unde rem ab illum sit soluta libero.
+        </p>
+        <img src="http://placehold.it/300x150" alt="" />
+      </div>
+    </div>
+  </body>
+</html>

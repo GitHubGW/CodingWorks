@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>레이아웃 설계1</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        /* height: 100vh; */
+      }
+      .container {
+        /* border: 5px solid red; */
+        /* height: 100%; */
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      header {
+        background-color: steelblue;
+        height: 200px;
+      }
+      section {
+        /* border: 5px solid blue; */
+        /* height: calc(100vh - 400px); */
+        /* 부모의 display:flex가 있으면 자식에게 높이 100%를 주면 부모의 높이를
+        넘어가지 않는 선에서 최대로 커짐 */
+        height: 100%;
+        display: flex;
+      }
+      section article {
+        flex: 3;
+        background-color: yellowgreen;
+      }
+      section aside {
+        flex: 1;
+        background-color: coral;
+      }
+      section nav {
+        flex: 1;
+        background-color: darkorchid;
+      }
+      footer {
+        background-color: burlywood;
+        height: 200px;
+      }
+      @media (max-width: 768px) {
+        section {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>Header</header>
+      <section>
+        <article>Article</article>
+        <aside>Aside</aside>
+        <nav>Nav</nav>
+      </section>
+      <footer>Footer</footer>
+    </div>
+  </body>
+</html>

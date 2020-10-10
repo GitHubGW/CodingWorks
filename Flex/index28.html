@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>레이아웃 설계4</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+      }
+      .container {
+        /* border: 5px solid #000; */
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      header {
+        background-color: thistle;
+        height: 100px;
+      }
+      section {
+        /* border: 5px solid #000; */
+        display: flex;
+        /* height: calc(100% - 200px); */
+        height: 100%;
+      }
+      section nav {
+        background-color: yellowgreen;
+        width: 250px;
+      }
+      section article {
+        background-color: burlywood;
+        flex: 1;
+      }
+      section aside {
+        background-color: darkkhaki;
+        width: 250px;
+      }
+      footer {
+        background-color: wheat;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>Header</header>
+      <section>
+        <nav>Nav</nav>
+        <article>Article</article>
+        <aside>Aside</aside>
+      </section>
+      <footer>Footer</footer>
+    </div>
+  </body>
+</html>
