@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반응형 블로그 포스트</title>
+    <style>
+      /* Google Font */
+      @import url("https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap");
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Zilla Slab", serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container {
+        border: 1px solid #ddd;
+        display: flex;
+        width: 1000px;
+      }
+      .blog-post {
+        /* border: 5px solid red; */
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .blog-img {
+        /* border: 5px solid blue; */
+        width: 250px;
+        overflow: hidden;
+        /* font-size:0; */
+      }
+      .blog-img:hover img {
+        transform: scale(1.1);
+      }
+      .blog-img img {
+        width: 100%;
+        transition: 0.5s;
+        /* 이미지가 인라인 블럭이기 때문에 생기는 마진을 없애는 방법 3가지 */
+        /* 1. 이미지의 부모 태그에 font-size:0을 줌 */
+        /* 2. vertical-align: top;을 줌 */
+        /* 3. 이미지를 display: block;으로 바꿔줌 */
+        /* vertical-align: top; */
+        display: block;
+      }
+      .blog-title {
+        /* border: 5px solid green; */
+        background-color: #00cec9;
+        color: white;
+        text-align: center;
+        /* width: 250px; */
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      .blog-title h2 {
+        margin: 0;
+      }
+      .blog-title.front-title {
+        order: -1;
+      }
+
+      /* 테블릿 버전 */
+      @media (min-width: 768px) and (max-width: 1024px) {
+        body {
+          height: auto;
+        }
+        .container {
+          width: 100%;
+          padding: 10px;
+          box-sizing: border-box;
+          flex-direction: column;
+          /* flex-wrap: wrap; */
+        }
+        .blog-post {
+          flex-direction: row;
+          height: 350px;
+        }
+        .blog-img,
+        .blog-title {
+          height: 100%;
+          flex: 1;
+        }
+        .blog-img img {
+          height: 100%;
+        }
+        .blog-title {
+          padding: 0px;
+        }
+      }
+      /* 모바일 버전 */
+      @media (max-width: 767px) {
+        body {
+          height: auto;
+        }
+        .container {
+          flex-direction: column;
+        }
+        .blog-img {
+          width: 100%;
+        }
+        .blog-title.front-title {
+          order: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="blog-post">
+        <div class="blog-img"><img src="images/blog-post-01.jpg" alt="" /></div>
+        <div class="blog-title">
+          <h2>Blog Post #01</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Repudiandae, facilis.
+          </p>
+        </div>
+      </div>
+      <div class="blog-post">
+        <div class="blog-img"><img src="images/blog-post-02.jpg" alt="" /></div>
+        <div class="blog-title front-title">
+          <h2>Blog Post #02</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Repudiandae, facilis.
+          </p>
+        </div>
+      </div>
+      <div class="blog-post">
+        <div class="blog-img"><img src="images/blog-post-03.jpg" alt="" /></div>
+        <div class="blog-title">
+          <h2>Blog Post #03</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Repudiandae, facilis.
+          </p>
+        </div>
+      </div>
+      <div class="blog-post">
+        <div class="blog-img">
+          <img src="images/blog-post-04.jpg" alt="" />
+        </div>
+        <div class="blog-title front-title">
+          <h2>Blog Post #04</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Repudiandae, facilis.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
