@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Google Web Fonts CDN */
+      @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+      /* Fontawesome 4.7 */
+      @import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+      body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: "Montserrat", sans-serif;
+      }
+      .container {
+        /* border: 5px solid #000; */
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+      }
+      .media {
+        border: 1px solid #ddd;
+        background-color: #eee;
+        width: 500px;
+        /* height: 150px; */
+        display: flex;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      .media img {
+        /* border: 5px solid orange; */
+        width: 150px;
+        flex: 1;
+      }
+      .media .title {
+        /* border: 5px solid orange; */
+        padding-left: 20px;
+        flex: 3;
+      }
+      .title h2 {
+        margin: 0;
+        font-size: 18px;
+        margin: 10px 0;
+      }
+      .title p {
+        margin: 0;
+        font-size: 15px;
+      }
+      @media (min-width: 768px) and (max-width: 1024px) {
+        .container {
+          flex-direction: column;
+          /* flex-wrap: wrap; */
+        }
+        .media {
+          width: 100%;
+          margin: 5px 0;
+        }
+        .media img {
+          width: 200px;
+        }
+      }
+      @media (max-width: 767px) {
+        body {
+          height: auto;
+        }
+        .container {
+          flex-direction: column;
+        }
+        .media {
+          flex-direction: column;
+          width: 100%;
+          margin-bottom: 10px;
+        }
+        .media img {
+          width: 100%;
+        }
+        .media .title {
+          padding-left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="media">
+        <img src="images/photo-01.png" alt="" />
+        <div class="title">
+          <h2>Feel the nature experience</h2>
+          <p>
+            Nature, in the broadest sense, is the natural, physical, or material
+            world or universe. "Nature" can refer to the phenomena of the
+            physical world, and also to life in general. The study of nature is
+            a large, if not the only, part of science.
+          </p>
+        </div>
+      </div>
+      <div class="media">
+        <img src="images/photo-02.png" alt="" />
+        <div class="title">
+          <h2>Feel the nature experience</h2>
+          <p>
+            Nature, in the broadest sense, is the natural, physical, or material
+            world or universe. "Nature" can refer to the phenomena of the
+            physical world, and also to life in general. The study of nature is
+            a large, if not the only, part of science.
+          </p>
+        </div>
+      </div>
+      <div class="media">
+        <img src="images/photo-03.png" alt="" />
+        <div class="title">
+          <h2>Feel the nature experience</h2>
+          <p>
+            Nature, in the broadest sense, is the natural, physical, or material
+            world or universe. "Nature" can refer to the phenomena of the
+            physical world, and also to life in general. The study of nature is
+            a large, if not the only, part of science.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

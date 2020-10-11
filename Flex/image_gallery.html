@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반응형 헤더영역과 이미지 갤러리</title>
+    <style>
+      /* Google Web Font */
+      @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+      /* Fontawesome 4.7 */
+      @import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Montserrat", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        height: 100vh;
+      }
+      .container {
+        /* border: 5px solid #000; */
+        margin-top: 30px;
+        width: 950px;
+      }
+      .section-header {
+        /* border: 5px solid red; */
+      }
+      .gnb {
+        /* border: 5px solid blue; */
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 30px;
+      }
+      .gnb a {
+        text-decoration: none;
+        color: black;
+        margin-left: 40px;
+        position: relative;
+        padding: 3px 0;
+        box-sizing: border-box;
+      }
+      .gnb a:before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%);
+        width: 0;
+        height: 2px;
+        background-color: black;
+        transition: 0.5s;
+      }
+      .gnb a:hover:before {
+        width: 100%;
+      }
+      .search {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+      }
+      .user-search {
+        /* border: 5px solid #000; */
+      }
+      .user-search input {
+        border: none;
+        border-bottom: 1px solid #ddd;
+        outline: none;
+        width: 300px;
+        padding: 8px;
+        box-sizing: border-box;
+        font-family: "Montserrat", sans-serif;
+        background: url("images/search.png") no-repeat center right;
+        background-size: 22px;
+        font-size: 18px;
+        font-weight: normal;
+      }
+      .user-search input:focus::placeholder {
+        visibility: hidden;
+      }
+      .user-search img {
+        width: 20px;
+        cursor: pointer;
+      }
+      .search button {
+        font-family: "Montserrat", sans-serif;
+        padding: 12px 60px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        background-color: seagreen;
+        color: white;
+        cursor: pointer;
+        font-size: 18px;
+        box-shadow: 3px 3px 5px #0000009a;
+        transition: 0.5s;
+      }
+      .search button:active {
+        transform: scale(0.8);
+      }
+      .section-image {
+        /* border: 5px solid green; */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        /* width: 100%; */
+      }
+      .section-image > div {
+        /* border: 3px solid #000; */
+        width: 310px;
+        height: 200px;
+        /* margin-left: 10px; */
+        margin-bottom: 10px;
+        /* 비율을 깨지지 않게 하고 싶으면 overflow: hidden;으로 넘치는 이미지 부분을 숨겨주면 됨 */
+        /* 아니면 밑에처럼 그냥 height:100%;를 주는 방법도 있음 */
+        overflow: hidden;
+        position: relative;
+      }
+      .section-image > div img {
+        /* border:1px solid red; */
+        width: 100%;
+        /* height: 100%; */
+        /* vertical-align: top; */
+      }
+      .section-image > div:hover .section-image-title{
+          transform:translateY(0);
+      }
+      .section-image-title{
+          /* border:5px solid red; */
+          position: absolute;
+          bottom:0;
+          left:0;
+          width: 100%;
+          color:white;
+          background-color: rgba(0, 0, 0, 0.308);
+          padding:10px;
+          box-sizing: border-box;
+          transform:translateY(80px);
+          transition: 0.5s;
+      }
+      .section-image-title > div{
+          /* border:3px solid blue; */
+          display: flex;
+          justify-content: space-between;
+      }
+      .section-image-title h2{
+          font-size: 16px;
+          font-weight: normal;
+          color:lightseagreen;
+      }
+
+
+      /* 테블릿 버전 */
+      @media (min-width: 768px) and (max-width: 1024px) {
+        .container {
+          /* border: 5px solid red; */
+          width: 100%;
+          padding: 20px;
+          box-sizing: border-box;
+        }
+        .gnb {
+          justify-content: flex-end;
+        }
+        .section-image > div {
+          width: 49%;
+          height:240px;
+        }
+      }
+
+      /* 모바일 버전 */
+      @media (max-width: 767px) {
+        body {
+          height: auto;
+        }
+        .container {
+          width: 100%;
+          padding: 20px;
+          box-sizing: border-box;
+        }
+        .gnb {
+          justify-content: space-between;
+        }
+        .gnb a {
+          margin: 0;
+        }
+        .search {
+          flex-direction: column;
+          justify-content: center;
+        }
+        .user-search {
+          margin-bottom: 30px;
+        }
+        .user-search input {
+          width: 100%;
+        }
+        .section-image {
+          flex-direction: column;
+        }
+        .section-image > div {
+          width: 100%;
+          margin-left: 0;
+          overflow: hidden;
+        }
+        .section-image > div img {
+          height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="section-header">
+        <div class="gnb">
+          <a href="#">Photoshop</a>
+          <a href="#">Illustrator</a>
+          <a href="#">Publishing</a>
+        </div>
+        <div class="search">
+          <div class="user-search">
+            <input type="text" placeholder="Search" />
+          </div>
+          <button>Designer Profile</button>
+        </div>
+      </div>
+      <div class="section-image">
+          <div>
+              <img src="images/p1.jpg" alt="" />
+              <div class="section-image-title">
+                  <h2>Image Title</h2>
+                  <div>
+                    <i class="fa fa-heart" aria-hidden="true">300 Likes</i>
+                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                  </div>
+              </div>
+          </div>
+          <div><img src="images/p2.jpg" alt="" /></div>
+          <div><img src="images/p3.jpg" alt="" /></div>
+          <div><img src="images/p4.jpg" alt="" /></div>
+          <div><img src="images/p5.jpg" alt="" /></div>
+          <div><img src="images/p6.jpg" alt="" /></div>
+          <div><img src="images/p7.jpg" alt="" /></div>
+          <div><img src="images/p8.jpg" alt="" /></div>
+          <div><img src="images/p9.jpg" alt="" /></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
